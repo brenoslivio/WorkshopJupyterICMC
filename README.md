@@ -7,8 +7,10 @@ Este repositório foi feito para o workshop sobre Jupyter na 1ª Semana de Works
 - História e introdução dando diversos exemplos de como pode ser usado;
 - As diversas formas de se usar o sistema Jupyter;
 - Instalação;
-- Aplicações com o Jupyter envolvendo plottar gráficos, desenvolver widgets e até fazer documentos somente em texto, incluindo com LaTeX. Existem várias extensões para o Jupyter que penso em falar e mostrar como utilizá-las;
-- Uso de linguagens além de Python no Jupyter, como R e C++.
+- Aplicações com o Jupyter: Bibliotecas do Python, ipywidgets, appmode;
+- Usando nbextensions;
+- Usando nbconvert;
+- Usando outras linguagens: C++.
 
 ## O que é o Jupyter?
 
