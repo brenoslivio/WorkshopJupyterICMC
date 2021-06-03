@@ -16,6 +16,14 @@ Para a melhor visualização dos cadernos pode-se utilizar do [nbviewer](https:/
 
 [3 - Widgets](https://nbviewer.jupyter.org/github/brenoslivio/WorkshopJupyterICMC/blob/main/3-Widgets.ipynb)
 
+## Abrindo os Notebooks pelo Google Colab
+
+Ao abrir os links anteriores dos cadernos no nbviewer, você verá o seguinte ícone:
+
+![colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+Basta clicar nele para abrir o caderno no Colab.
+
 ## Arquivo para o Docker Compose
 
 Com o Docker Compose instalado, utilize do arquivo `yml` localizado [aqui](https://github.com/brenoslivio/WorkshopJupyterICMC/blob/main/Docker/docker-compose.yml) para utilizar do seguinte comando:
@@ -42,6 +50,6 @@ services:
       container_name:   datascience-notebook-container
 ```
 
-Troque "/SEU/DIRETORIO/AQUI" para o caminho onde vai abrir seus cadernos Jupyter.
+Troque `/SEU/DIRETORIO/AQUI` para o caminho onde vai abrir seus cadernos Jupyter.
 
-Se quiser utilizardo JupyterLab, basta retirar o "#" para utilizar o comando `JUPYTER_ENABLE_LAB: "yes"`.
+Se quiser utilizar o JupyterLab ao invés do Jupyter clássico, basta retirar o `#` para utilizar o comando `JUPYTER_ENABLE_LAB: "yes"`.
