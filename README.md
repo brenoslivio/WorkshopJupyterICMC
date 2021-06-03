@@ -2,74 +2,46 @@
 
 Este repositório foi feito para o workshop sobre Jupyter na 1ª Semana de Workshops do ICMC - USP em 03/05/2021.
 
-## O que pretendo passar
+## Apresentação
 
-- História e introdução dando diversos exemplos de como pode ser usado;
-- As diversas formas de se usar o sistema Jupyter;
-- Instalação;
-- Aplicações com o Jupyter: Bibliotecas do Python, ipywidgets, appmode;
-- Usando nbextensions;
-- Usando nbconvert;
-- Usando outras linguagens: C++.
+É possível conferir a apresentação do Workshop aqui.
 
-## O que é o Jupyter?
+## Jupyter Notebooks
 
-Jupyter é uma ferramenta interativa de código aberto e conhecida como um caderno de anotações computacional, que os pesquisadores podem usar para combinar códigos de software, saídas computacionais, textos explicativos e recursos multimídia em um único documento [1]. 
+Para a melhor visualização dos cadernos pode-se utilizar do [nbviewer](https://nbviewer.jupyter.org/) que pode renderizar os cadernos hospedado no repositório do GitHub. Os cadernos podem ser visualizados nos seguintes links:
 
-## Project Jupyter
+[1 - Introdução](https://nbviewer.jupyter.org/github/brenoslivio/WorkshopJupyterICMC/blob/main/1-Introducao.ipynb)
 
-O Projeto Jupyter é um projeto sem fins lucrativos e de código aberto, nascido do projeto IPython em 2014, à medida que evoluiu para apoiar a ciência dos dados interativos e a computação científica em todas as linguagens de programação [2].
+[2 - Imagens](https://nbviewer.jupyter.org/github/brenoslivio/WorkshopJupyterICMC/blob/main/2-Imagens.ipynb)
 
-JUlia + PYThon + R = Jupyter!!
+[3 - Widgets](https://nbviewer.jupyter.org/github/brenoslivio/WorkshopJupyterICMC/blob/main/3-Widgets.ipynb)
 
-## História dos cadernos computacionais
+## Arquivo para o Docker Compose
 
-Em 1987, foi desenvolvido uma espécie de caderno computacional pensando no software Mathematica. 
-Quando você observa como esses cadernos foram estruturados, você percebe que eles dependiam de uma hierarquia de células que permitia o esboço e a seção de documentos, que você agora também encontra nos cadernos Jupyter.
+Com o Docker Compose instalado, utilize do arquivo `yml` localizado [aqui](https://github.com/brenoslivio/WorkshopJupyterICMC/blob/main/Docker/docker-compose.yml) para utilizar do seguinte comando:
 
-## IPython
+```bash
+	docker-compose up
+```
 
-No final de 2001, cerca de vinte anos depois que Guido van Rossum começou a desenvolver o Python no Instituto Nacional de Pesquisa em Matemática e Ciência da Computação na Holanda, Fernando Pérez começou a desenvolver o IPython.
-IPython tem agora apenas dois papéis a cumprir: ser o backend Python para o Jupyter Notebook, que também é conhecido como o kernel, e um shell Python interativo [3].
+O arquivo `yml` tem o seguinte conteúdo:
 
-## Importância desses cadernos computacionais
+```
+version:                "3"
+services:
+  datascience-notebook:
+      image:            jupyter/datascience-notebook
+      volumes:
+        - /SEU/DIRETORIO/AQUI:/home/jovyan/work
+      environment:
+        GRANT_SUDO: "yes"
+        #JUPYTER_ENABLE_LAB: "yes"
+      user: root
+      ports:
+        - 8888:8888
+      container_name:   datascience-notebook-container
+```
 
-Esses cadernos podem auxiliar em diversos tipos de casos:
+Troque "/SEU/DIRETORIO/AQUI" para o caminho onde vai abrir seus cadernos Jupyter.
 
-- Ensino de programação;
-- Produção de relatórios científicos;
-- Desenvolvimento de aplicações de estatística e ciência de dados.
-
-## Crescimento do uso desses cadernos
-
-Há cerca de 3 anos, havia 1.230.000 cadernos Jupyter publicados no GitHub. Em outubro de 2020, este número havia crescido 8 vezes, e conta com 9.720.000 cadernos [4].
-
-## R Markdown
-
-Outra “alternativa” ao Jupyter pode ser o RMarkdown.  Ele funciona de forma análoga ao Jupyter pensando em células de texto e código.
-As diferenças notáveis é que o arquivo do RMarkdown é possível editar como texto, enquanto o Jupyter gera um código em JSON (JavaScript Object Notation), como se o caderno já fosse pensado como uma “aplicação web”.
-Além disso, para reproduzir widgets como o Jupyter, recomenda-se o uso do pacote Shiny.
-
-## Markdown no Jupyter
-
-O Markdown é uma linguagem de marcação (markup language) para formatar textos, tal como HTML, XML e LaTeX, que podem ser também consideradas linguagens de marcação.
-
-Para células de texto no Jupyter, a formatação é em Markdown.
-
-## Diversas formas de se usar o Jupyter
-
-Online, por um servidor que armazena o sistema Jupyter:
-
-    Google Colab, Binder.
-
-Instalando no computador:
-- Instalar diretamente pelo pip ou conda;
-- Instalar extensão de Python no Visual Studio Code;
-- Docker.
-
-## Usando o Docker
-
-Usar o Jupyter com o Docker é provavelmente o melhor caminho.
-Instruções de como instalar o Docker Compose em qualquer Sistema Operacional:
-
-https://docs.docker.com/compose/install/
+Se quiser utilizardo JupyterLab, basta retirar o "#" para utilizar o comando `JUPYTER_ENABLE_LAB: "yes"`.
