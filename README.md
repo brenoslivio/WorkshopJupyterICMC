@@ -4,7 +4,7 @@ Este repositório foi feito para o workshop sobre Jupyter na 1ª Semana de Works
 
 ## Apresentação
 
-É possível conferir a apresentação do Workshop aqui.
+É possível conferir a apresentação do Workshop [aqui](https://github.com/brenoslivio/WorkshopJupyterICMC/blob/main/Jupyter%20um%20caderno%20computacional.pdf).
 
 ## Jupyter Notebooks
 
