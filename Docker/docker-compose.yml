@@ -4,6 +4,10 @@ services:
       image:            jupyter/datascience-notebook
       volumes:
         - /SEU/DIRETORIO/AQUI:/home/jovyan/work
+      environment:
+        GRANT_SUDO: "yes"
+        #JUPYTER_ENABLE_LAB: "yes"
+      user: root
       ports:
         - 8888:8888
       container_name:   datascience-notebook-container
